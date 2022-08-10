@@ -1,14 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Swipe CSS -->
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  
+  <!-- CSS Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/72fc72f438.js" crossorigin="anonymous"></script>
   <title>Responsive Portfolio Website</title>
 </head>
+
 <body>
-  
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">Alexa</a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list grid">
+          <li class="nav__item">
+            <a href="#home" class="nav__link">
+              <i class="fa-solid fa-house nav__icon"></i> Home
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">
+              <i class="fa-solid fa-user nav__icon"></i> About
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#skills" class="nav__link">
+              <i class="fa-solid fa-file-lines nav__icon"></i> Skills
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#services" class="nav__link">
+              <i class="fa-solid fa-briefcase nav__icon"></i> Services
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#portfolio" class="nav__link">
+              <i class="fa-solid fa-image nav__icon"></i> Portfolio
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#portfolio" class="nav__link">
+              <i class="fa-solid fa-paper-plane nav__icon"></i> Contactme
+            </a>
+          </li>
+        </ul>
+        <i class="fa-solid fa-xmark nav__close" id="nav-close"></i>
+      </div>
+
+      <div class="nav__btns">
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bi bi-grid-fill"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main" id="main">
+    <!-- Home -->
+    <section class="home section" id="home">
+      <div class="home__container container grid">
+        <div class="home__content grid">
+          <div class="home__social">
+            <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github home__social-icon"></i></a>
+            <a href="https://dribbble.com/" target="_blank"><i class="fa-solid fa-basketball home__social-icon"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i
+                class="fa-brands fa-linkedin home__social-icon"></i></a>
+          </div>
+
+          <div class="home-img">
+            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <mask id="mask0" mask-type="alpha">
+                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                  130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                  97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                  0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+              </mask>
+              <g mask="url(#mask0)">
+                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+
+                <!-- <image href="#" x="12" y="18" class="home__blob-img"/> -->
+              </g>
+            </svg>
+          </div>
+
+          <div class="home__data">
+            <h1 class="home__title">Hi, I'm Sebastian</h1>
+            <h3 class="home__subtitle">Frontend Developer</h3>
+            <p class="home__description">High level experience in web design and knowledge, producing quality work.</p>
+            <a href="#" class="button button--flex">Contact Me <i class="fa-solid fa-paper-plane button__icon"></i></a>
+          </div>
+        </div>
+
+        <div class="home__scroll">
+          <a href="#about" class="home__scroll-button button--flex">
+            <i class="bi bi-mouse home__scroll-mouse"></i>
+            <span class="home__scroll-name">Scroll down</span>
+            <i class="bi bi-arrow-down-short home__scroll-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <h2 class="section__title">About</h2>
+      <span class="section__subtitle">My introduction</span>
+
+      <div class="about__container container grid">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#6e57e0">
+          <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+          <path
+            d="M447.1 32h-384C28.64 32-.0091 60.65-.0091 96v320c0 35.35 28.65 64 63.1 64h384c35.35 0 64-28.65 64-64V96C511.1 60.65 483.3 32 447.1 32zM111.1 96c26.51 0 48 21.49 48 48S138.5 192 111.1 192s-48-21.49-48-48S85.48 96 111.1 96zM446.1 407.6C443.3 412.8 437.9 416 432 416H82.01c-6.021 0-11.53-3.379-14.26-8.75c-2.73-5.367-2.215-11.81 1.334-16.68l70-96C142.1 290.4 146.9 288 152 288s9.916 2.441 12.93 6.574l32.46 44.51l93.3-139.1C293.7 194.7 298.7 192 304 192s10.35 2.672 13.31 7.125l128 192C448.6 396 448.9 402.3 446.1 407.6z" />
+        </svg>
+
+        <div class="about__data">
+          <p class="about__description">Web developer with extensible knowledge and years of experience,
+            working in web technologies and UI / UX design, delivering quality work.</p>
+
+          <div class="about__info">
+            <div>
+              <span class="about__info-title">08+</span>
+              <span class="about__indo-name">Years <br> experience</span>
+            </div>
+            <div>
+              <span class="about__info-title">20+</span>
+              <span class="about__indo-name">Completed <br> project</span>
+            </div>
+            <div>
+              <span class="about__info-title">05+</span>
+              <span class="about__indo-name">Companies <br> worked</span>
+            </div>
+          </div>
+
+          <div class="about__buttons">
+            <a download="" href="#" class="button button--flex">
+              Download CV <i class="fa-solid fa-download button__icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills section" id="skills">
+      <h2 class="section__title">Skills</h2>
+      <span class="section__subtitle">My technical level</span>
+
+      <div class="skills__container container grid">
+        <div>
+          <!-- Skills 1 -->
+          <div class="skills__content skills__open">
+            <div class="skills__header">
+              <i class="bi bi-braces skills__icon"></i>
+
+              <div>
+                <h1 class="skills__title">Frontend Developer</h1>
+                <span class="skills__subtitle">More than 4 years</span>
+              </div>
+
+              <i class="bi bi-arrow-down-short skills__arrow"></i>
+            </div>
+
+            <div class="skills__list grid">
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">HTML5</h3>
+                  <span class="skills__number">90%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__html"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">CSS3</h3>
+                  <span class="skills__number">80%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__css"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">JavaScript</h3>
+                  <span class="skills__number">70%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__js"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">Angular</h3>
+                  <span class="skills__number">60%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__angular"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills 2 -->
+          <div class="skills__content skills__close">
+            <div class="skills__header">
+              <i class="bi bi-hdd-rack skills__icon"></i>
+
+              <div>
+                <h1 class="skills__title">Backend Developer</h1>
+                <span class="skills__subtitle">More than 2 years</span>
+              </div>
+
+              <i class="bi bi-arrow-down-short skills__arrow"></i>
+            </div>
+
+            <div class="skills__list grid">
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">NodeJS</h3>
+                  <span class="skills__number">80%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__nodejs"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">Firebase</h3>
+                  <span class="skills__number">90%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__firebase"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">MongoDB</h3>
+                  <span class="skills__number">70%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__mongodb"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">Python</h3>
+                  <span class="skills__number">60%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__python"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills 3 -->
+          <div class="skills__content skills__close">
+            <div class="skills__header">
+              <i class="bi bi-brush skills__icon"></i>
+
+              <div>
+                <h1 class="skills__title">Designer Developer</h1>
+                <span class="skills__subtitle">More than 5 years</span>
+              </div>
+
+              <i class="bi bi-arrow-down-short skills__arrow"></i>
+            </div>
+
+            <div class="skills__list grid">
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">Figma</h3>
+                  <span class="skills__number">90%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__figma"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">AdobeXD</h3>
+                  <span class="skills__number">75%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__adobexd"></span>
+                </div>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__titles">
+                  <h3 class="skills__name">Photoshop</h3>
+                  <span class="skills__number">60%</span>
+                </div>
+                <div class="skills__bar">
+                  <span class="skills__percentage skills__photoshop"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qualification -->
+    <section class="qualification section" id="qualification">
+      <h2 class="section__title">Qualifications</h2>
+      <span class="section__subtitle">My personal journey</span>
+
+      <div class="qualification__container container">
+        <div class="qualification__tabs">
+          <div class="qualification__button button--flex qualification__active" data-target="#education">
+            <i class="bi bi-mortarboard-fill qualification__icon"></i>
+            Education
+          </div>
+          <div class="qualification__button button--flex" data-target="#work">
+            <i class="bi bi-briefcase-fill qualification__icon"></i>
+            Work
+          </div>
+        </div>
+
+        <div class="qualification__sections">
+          <!-- Qualification Content 1 -->
+          <div class="qualification__content qualification__active" data-content id="education">
+            <!-- Qualification 1 -->
+            <div class="qualification__data">
+              <div>
+                <h3 class="qualification__title">Software Engineering</h3>
+                <span class="qualification__subtitle">Colombia - University</span>
+                <div class="qualification__calendar">
+                  <i class="bi bi-calendar3"></i>
+                  2022 - 2024
+                </div>
+              </div>
+
+              <div>
+                <div class="qualification__rounder"></div>
+                <div class="qualification__line"></div>
+              </div>
+            </div>
+
+            <!-- Qualification 2 -->
+            <div class="qualification__data">
+              <div></div>
+
+              <div>
+                <div class="qualification__rounder"></div>
+                <div class="qualification__line"></div>
+              </div>
+
+              <div>
+                <h3 class="qualification__title">Analysis and Development of Information Systems</h3>
+                <span class="qualification__subtitle">Colombia - University</span>
+                <div class="qualification__calendar">
+                  <i class="bi bi-calendar3"></i>
+                  2018 - 2020
+                </div>
+              </div>
+            </div>
+
+            <!-- Qualification 3 -->
+            <div class="qualification__data">
+              <div>
+                <h3 class="qualification__title">Software Programming</h3>
+                <span class="qualification__subtitle">Colombia - Institute</span>
+                <div class="qualification__calendar">
+                  <i class="bi bi-calendar3"></i>
+                  2017 - 2018
+                </div>
+              </div>
+
+              <div>
+                <div class="qualification__rounder"></div>
+                <!-- <div class="qualification__line"></div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Qualification Content 2 -->
+          <div class="qualification__content" data-content id="work">
+            <!-- Qualification 1 -->
+            <div class="qualification__data">
+              <div></div>
+
+              <div>
+                <div class="qualification__rounder"></div>
+                <div class="qualification__line"></div>
+              </div>
+
+              <div>
+                <h3 class="qualification__title">Software Engineer</h3>
+                <span class="qualification__subtitle">Google - San Francisco</span>
+                <div class="qualification__calendar">
+                  <i class="bi bi-calendar3"></i>
+                  2035 - Present
+                </div>
+              </div>
+            </div>
+
+            <!-- Qualification 2 -->
+            <div class="qualification__data">
+              <div>
+                <h3 class="qualification__title">Frontend Developer</h3>
+                <span class="qualification__subtitle">Microsoft - Seattle</span>
+                <div class="qualification__calendar">
+                  <i class="bi bi-calendar3"></i>
+                  2028 - 2034
+                </div>
+              </div>
+
+              <div>
+                <div class="qualification__rounder"></div>
+                <div class="qualification__line"></div>
+              </div>
+            </div>
+
+            <!-- Qualification 3 -->
+            <div class="qualification__data">
+              <div></div>
+
+              <div>
+                <div class="qualification__rounder"></div>
+                <!-- <div class="qualification__line"></div> -->
+              </div>
+
+              <div>
+                <h3 class="qualification__title">UI/UX Designer</h3>
+                <span class="qualification__subtitle">Adobe - Seattle</span>
+                <div class="qualification__calendar">
+                  <i class="bi bi-calendar3"></i>
+                  2025 - 2027
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services section" id="services">
+      <h2 class="section__title">Services</h2>
+      <span class="section__subtitle">What I offer</span>
+
+      <div class="services__container container grid">
+        <!-- Services 1 -->
+        <div class="services__content">
+          <div>
+            <i class="bi bi-columns services__icon"></i>
+            <h3 class="services__title">UI/UX <br> Designer</h3>
+          </div>
+
+          <span class="button button--flex button--small button--link services__button">
+            View more
+            <i class="bi bi-arrow-right-short button__icon"></i>
+          </span>
+
+          <div class="services__modal">
+            <div class="services__modal-content">
+              <h4 class="services__modal-title">UI/UX <br> Designer</h4>
+              <i class="bi bi-x services__modal-close"></i>
+
+              <ul class="services__modal-services grid">
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>I develop de user interface.</p>
+                </li>
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>Webpage development.</p>
+                </li>
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>I create UX elements interactions.</p>
+                </li>
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>I position your company brand.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services 2 -->
+        <div class="services__content">
+          <div>
+            <i class="bi bi-code services__icon"></i>
+            <h3 class="services__title">Frontend <br> Developer</h3>
+          </div>
+
+          <span class="button button--flex button--small button--link services__button">
+            View more
+            <i class="bi bi-arrow-right-short button__icon"></i>
+          </span>
+
+          <div class="services__modal">
+            <div class="services__modal-content">
+              <h4 class="services__modal-title">Frontend <br> Developer</h4>
+              <i class="bi bi-x services__modal-close"></i>
+
+              <ul class="services__modal-services grid">
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>I develop de user interface.</p>
+                </li>
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>Webpage development.</p>
+                </li>
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>I create UX elements interactions.</p>
+                </li>
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>I position your company brand.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services 3 -->
+        <div class="services__content">
+          <div>
+            <i class="bi bi-pen services__icon"></i>
+            <h3 class="services__title">Branding <br> Designer</h3>
+          </div>
+
+          <span class="button button--flex button--small button--link services__button">
+            View more
+            <i class="bi bi-arrow-right-short button__icon"></i>
+          </span>
+
+          <div class="services__modal">
+            <div class="services__modal-content">
+              <h4 class="services__modal-title">Branding <br> Designer</h4>
+              <i class="bi bi-x services__modal-close"></i>
+
+              <ul class="services__modal-services grid">
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>I develop de user interface.</p>
+                </li>
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>Webpage development.</p>
+                </li>
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>I create UX elements interactions.</p>
+                </li>
+                <li class="services__modal-service">
+                  <i class="bi bi-check-circle services__modal-icon"></i>
+                  <p>I position your company brand.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio section" id="portfolio">
+      <h2 class="section__title">Portfolio</h2>
+      <span class="section__subtitle">Most recent work</span>
+
+      <div class="portfolio__container container swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Portfolio 1 -->
+          <div class="portfolio__content grid swiper-slide">
+            <svg class="portfolio__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#6e57e0">
+              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M447.1 32h-384C28.64 32-.0091 60.65-.0091 96v320c0 35.35 28.65 64 63.1 64h384c35.35 0 64-28.65 64-64V96C511.1 60.65 483.3 32 447.1 32zM111.1 96c26.51 0 48 21.49 48 48S138.5 192 111.1 192s-48-21.49-48-48S85.48 96 111.1 96zM446.1 407.6C443.3 412.8 437.9 416 432 416H82.01c-6.021 0-11.53-3.379-14.26-8.75c-2.73-5.367-2.215-11.81 1.334-16.68l70-96C142.1 290.4 146.9 288 152 288s9.916 2.441 12.93 6.574l32.46 44.51l93.3-139.1C293.7 194.7 298.7 192 304 192s10.35 2.672 13.31 7.125l128 192C448.6 396 448.9 402.3 446.1 407.6z" />
+            </svg>
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Modern Website</h3>
+              <p class="portfolio__description">Website adaptable to all devices, with UI components and animated
+                interactions.</p>
+              <a href="#" class="button button--flex button--small portfolio__button">
+                Demo
+                <i class="bi bi-arrow-right-short button__icon"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Portfolio 2 -->
+          <div class="portfolio__content grid swiper-slide">
+            <svg class="portfolio__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#6e57e0">
+              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M447.1 32h-384C28.64 32-.0091 60.65-.0091 96v320c0 35.35 28.65 64 63.1 64h384c35.35 0 64-28.65 64-64V96C511.1 60.65 483.3 32 447.1 32zM111.1 96c26.51 0 48 21.49 48 48S138.5 192 111.1 192s-48-21.49-48-48S85.48 96 111.1 96zM446.1 407.6C443.3 412.8 437.9 416 432 416H82.01c-6.021 0-11.53-3.379-14.26-8.75c-2.73-5.367-2.215-11.81 1.334-16.68l70-96C142.1 290.4 146.9 288 152 288s9.916 2.441 12.93 6.574l32.46 44.51l93.3-139.1C293.7 194.7 298.7 192 304 192s10.35 2.672 13.31 7.125l128 192C448.6 396 448.9 402.3 446.1 407.6z" />
+            </svg>
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Brand Design</h3>
+              <p class="portfolio__description">Website adaptable to all devices, with UI components and animated
+                interactions.</p>
+              <a href="#" class="button button--flex button--small portfolio__button">
+                Demo
+                <i class="bi bi-arrow-right-short button__icon"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Portfolio 3 -->
+          <div class="portfolio__content grid swiper-slide">
+            <svg class="portfolio__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#6e57e0">
+              <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M447.1 32h-384C28.64 32-.0091 60.65-.0091 96v320c0 35.35 28.65 64 63.1 64h384c35.35 0 64-28.65 64-64V96C511.1 60.65 483.3 32 447.1 32zM111.1 96c26.51 0 48 21.49 48 48S138.5 192 111.1 192s-48-21.49-48-48S85.48 96 111.1 96zM446.1 407.6C443.3 412.8 437.9 416 432 416H82.01c-6.021 0-11.53-3.379-14.26-8.75c-2.73-5.367-2.215-11.81 1.334-16.68l70-96C142.1 290.4 146.9 288 152 288s9.916 2.441 12.93 6.574l32.46 44.51l93.3-139.1C293.7 194.7 298.7 192 304 192s10.35 2.672 13.31 7.125l128 192C448.6 396 448.9 402.3 446.1 407.6z" />
+            </svg>
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Online Store</h3>
+              <p class="portfolio__description">Website adaptable to all devices, with UI components and animated
+                interactions.</p>
+              <a href="#" class="button button--flex button--small portfolio__button">
+                Demo
+                <i class="bi bi-arrow-right-short button__icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Rows -->
+        <div class="swiper-button-next">
+          <i class="bi bi-chevron-right swiper-portfolio-icon"></i>
+        </div>
+        <div class="swiper-button-prev">
+          <i class="bi bi-chevron-left swiper-portfolio-icon"></i>
+        </div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- Project In Mind -->
+    <section class="project section">
+      <div class="project__bg">
+        <div class="project__container container grid">
+          <div class="project__data">
+            <h2 class="project__title">You have a new project</h2>
+            <p class="project__description">Contact me now and get 30% discount on your new project.</p>
+            <a href="#contact" class="button button--flex button--white">
+              Contact me
+              <i class="bi bi-send project__icon button__icon"></i>
+            </a>
+          </div>
+
+          <svg class="project__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#ffffff">
+            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+            <path
+              d="M447.1 32h-384C28.64 32-.0091 60.65-.0091 96v320c0 35.35 28.65 64 63.1 64h384c35.35 0 64-28.65 64-64V96C511.1 60.65 483.3 32 447.1 32zM111.1 96c26.51 0 48 21.49 48 48S138.5 192 111.1 192s-48-21.49-48-48S85.48 96 111.1 96zM446.1 407.6C443.3 412.8 437.9 416 432 416H82.01c-6.021 0-11.53-3.379-14.26-8.75c-2.73-5.367-2.215-11.81 1.334-16.68l70-96C142.1 290.4 146.9 288 152 288s9.916 2.441 12.93 6.574l32.46 44.51l93.3-139.1C293.7 194.7 298.7 192 304 192s10.35 2.672 13.31 7.125l128 192C448.6 396 448.9 402.3 446.1 407.6z" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial section">
+      <h2 class="section__title">Testimonial</h2>
+      <span class="section__subtitle">My client saying</span>
+
+      <div class="testimonial__container container swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Testimonial 1 -->
+          <div class="testimonial__content swiper-slide">
+            <div class="testimonial__data">
+              <div class="testimonial__header">
+                <svg class="testimonial__img" xmlns="http://www.w3.org/2000/svg" fill="#6e57e0" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+
+                <div>
+                  <h3 class="testimonial__name">Sarah Smith</h3>
+                  <span class="testimonial__client">Client</span>
+                </div>
+
+                <div>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                </div>
+              </div>
+
+              <p class="testimonial__description">I get a good impression, I carry out my project with all the possible quality and attention and support 24hrs a day.</p>
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="testimonial__content swiper-slide">
+            <div class="testimonial__data">
+              <div class="testimonial__header">
+                <svg class="testimonial__img" xmlns="http://www.w3.org/2000/svg" fill="#6e57e0" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+
+                <div>
+                  <h3 class="testimonial__name">Sebastian Slakova</h3>
+                  <span class="testimonial__client">Client</span>
+                </div>
+
+                <div>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                </div>
+              </div>
+
+              <p class="testimonial__description">I get a good impression, I carry out my project with all the possible quality and attention and support 24hrs a day.</p>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="testimonial__content swiper-slide">
+            <div class="testimonial__data">
+              <div class="testimonial__header">
+                <svg class="testimonial__img" xmlns="http://www.w3.org/2000/svg" fill="#6e57e0" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+
+                <div>
+                  <h3 class="testimonial__name">Alice Rose</h3>
+                  <span class="testimonial__client">Client</span>
+                </div>
+
+                <div>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                  <i class="bi bi-star testimonial__icon-star"></i>
+                </div>
+              </div>
+
+              <p class="testimonial__description">I get a good impression, I carry out my project with all the possible quality and attention and support 24hrs a day.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper pagination -->
+        <div class="swiper-pagination swiper-pagination-testimonial"></div>
+      </div>
+    </section>
+
+    <!-- Contact Me -->
+    
+  </main>
+
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
