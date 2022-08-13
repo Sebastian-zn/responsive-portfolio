@@ -24,6 +24,35 @@ function linkAction() {
 
 nav_link.forEach(n => n.addEventListener('click', linkAction));
 
+// Scroll Sections Active Link
+const sections = document.querySelectorAll('section[id]');
+
+function scrollActive() {
+  const scroll_y = window.pageYOffset;
+
+  sections.forEach(current => {
+    const section_height = current.offsetHeight;
+    const section_top = current.offsetTop - 50;
+
+    let section_id = current.getAttribute('id');
+
+    if (scroll_y > section_top && scroll_y <= section_top + section_height) {
+      document.querySelector('.nav__menu a[href*=' + section_id + ']').classList.add('active-link');
+    } else {
+      document.querySelector('.nav__menu a[href*=' + section_id + ']').classList.remove('active-link');
+    }
+  });
+}
+
+window.addEventListener('scroll', scrollActive);
+
+function scrollHeader(){
+  const nav = document.getElementById('header')
+  // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+  if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header');
+}
+window.addEventListener('scroll', scrollHeader);
+
 // Accordion Skills
 const skills_content = document.getElementsByClassName('skills__content'),
   skills_header = document.querySelectorAll('.skills__header');
