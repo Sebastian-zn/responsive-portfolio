@@ -7,6 +7,9 @@
   --hue-color: 250;
   /* 250 Purple */
 
+  /* Header */
+  --header-height: 40px;
+
   /* - HSL color mode */
   --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-second: hsl(var(--hue-color), 69%, 61%);
@@ -229,6 +232,14 @@ img {
 
 .show-menu {
   bottom: 0;
+}
+
+.active-link {
+  color: var(--first-color);
+}
+
+.scroll-header {
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
 }
 
 /* HOME */
@@ -796,6 +807,10 @@ img {
   display: flex;
 }
 
+.testimonial__container {
+  overflow: hidden;
+}
+
 .testimonial__data {
   flex-direction: column;
   justify-content: space-between;
@@ -881,4 +896,60 @@ img {
   border: none;
   outline: none;
   padding: .25rem .5rem .5rem 0;
+}
+
+/* FOOTER */
+.footer {
+  padding-top: 2rem;
+}
+
+.footer__container {
+  row-gap: 3.5rem;
+}
+
+.footer__bg {
+  background-color: var(--first-color-second);
+  padding: 2rem 0 3rem;
+}
+
+.footer__title {
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+
+.footer__subtitle {
+  font-size: var(--small-font-size);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.footer__link:hover {
+  color: var(--first-color-lighter);
+}
+
+.footer__social {
+  font-size: 1.25rem;
+  margin-right: var(--mb-1-5);
+}
+
+.footer__social:hover {
+  color: var(--first-color-lighter);
+}
+
+.footer__copy {
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  color: var(--text-color-light);
+  margin-top: var(--mb-3);
+}
+
+.footer__title,
+.footer__subtitle,
+.footer__link,
+.footer__social {
+  color: #fff;
 }
