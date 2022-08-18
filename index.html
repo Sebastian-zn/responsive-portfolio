@@ -59,10 +59,13 @@
             </a>
           </li>
         </ul>
-        <i class="fa-solid fa-xmark nav__close" id="nav-close"></i>
+        <i class="bi bi-x nav__close" id="nav-close"></i>
       </div>
 
       <div class="nav__btns">
+        <!-- Theme change button -->
+        <i class="bi bi-moon change-theme" id="change-button"></i>
+
         <div class="nav__toggle" id="nav-toggle">
           <i class="bi bi-grid-fill"></i>
         </div>
@@ -829,12 +832,6 @@
               <label for="name" class="contact__name">Name</label>
               <input type="text" name="name" class="contact__input">
             </div>
-          </div>
-          <div class="contact__inputs grid">
-            <div class="contact__content">
-              <label for="name" class="contact__name">Name</label>
-              <input type="text" name="name" class="contact__input">
-            </div>
             <div class="contact__content">
               <label for="email" class="contact__name">Email</label>
               <input type="email" name="email" class="contact__input">
@@ -896,6 +893,11 @@
       <p class="footer__copy">&#169; Sebastian Avila. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Scroll Up Button -->
+  <a href="#" class="scroll-up-btn" id="scroll-up-btn">
+    <i class="fa-solid fa-arrow-up scroll-up__icon"></i>
+  </a>
 
   <!-- Swiper JS -->
   <script src="js/swiper-bundle.min.js"></script>

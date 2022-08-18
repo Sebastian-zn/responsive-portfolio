@@ -146,3 +146,51 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
     }
   }
 });
+
+// Show Scroll Up
+const scroll_up_btn = document.getElementById('scroll-up-btn');
+
+function showScrollUpBtn(){
+  // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-up-btn class
+  if(this.scrollY >= 560) scroll_up_btn.classList.add('show-scroll'); else scroll_up_btn.classList.remove('show-scroll');
+}
+window.addEventListener('scroll', showScrollUpBtn);
+
+// Back to Top Action
+function backToTop() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+scroll_up_btn.addEventListener('click', (e) => {
+  e.preventDefault();
+  backToTop();
+});
+
+/* DARK LIGHT THEME */ 
+const themeButton = document.getElementById('change-button');
+const darkTheme = 'dark-theme';
+const iconTheme = 'bi-sun';
+
+// Previously selected topic (if user selected)
+const selectedTheme = localStorage.getItem('selected-theme');
+const selectedIcon = localStorage.getItem('selected-icon');
+
+// We obtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bi-moon' : 'bi-sun';
+
+// We validate if the user previously chose a topic
+if (selectedTheme) {
+  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+  themeButton.classList[selectedIcon === 'bi-moon' ? 'add' : 'remove'](iconTheme);
+}
+
+// Activate / deactivate the theme manually with the button
+themeButton.addEventListener('click', () => {
+    // Add or remove the dark / icon theme
+    document.body.classList.toggle(darkTheme);
+    themeButton.classList.toggle(iconTheme);
+    // We save the theme and the current icon that the user chose
+    localStorage.setItem('selected-theme', getCurrentTheme());;
+    localStorage.setItem('selected-icon', getCurrentIcon())
+})
